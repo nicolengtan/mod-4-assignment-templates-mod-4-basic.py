@@ -46,9 +46,13 @@ def savings(gross_pay, tax_rate, expenses):
     return remaining_savings
 
 gross_pay = int(input("Enter employee's Gross Pay in centavos:"))
-tax_rate = float(input("Enter Tax Rate:))
-expense = int(input("Enter emoloyee's Expenses amount in centavos:"))
+
+tax_rate = float(input("Enter Tax Rate:"))
+
+expenses = int(input("Enter emoloyee's Expenses amount in centavos:"))
+
 savings_amount = savings(gross_pay, tax_rate, expenses)
+
 print(f"Remaining Savings: {savings_amount} centavos")
 
 -------
@@ -92,14 +96,19 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
 def material_waste(total_material, material_units, num_jobs, job_consumption):
     total_consumption = num_jobs * job_consumption
     material_wasted = total_material - total_consumption
-    result = f"{material_wasted} {material_units}
+    result = f"{material_wasted} {material_units}"
     return result
 
 total_material = int(input("Enter Total Material available:"))
+
 material_units = str(input("Enter Quantity Unit of the Material:"))
+
 num_jobs = int(input("Enter the Number of Jobs:"))
+
 job_consumption = int(input("Enter the Amount of Material Consumed per Job:"))
+
 waste_result = material_waste(total_material, material_units, num_jobs, job_consumption)
+
 print(f"Material wasted after {num_jobs} jobs: {waste_result}")
 
 -------
@@ -139,10 +148,14 @@ def interest(principal, rate, periods):
     final_value = int(principal * (1 + rate * periods))
     return final_value
 
-prinicipal = int(input("Enter Prinicipal Amount in centavos:"))
+principal = int(input("Enter Prinicipal Amount in centavos:"))
+
 rate = float(input("Enter the Interest Rate per period in decimals:"))
+
 periods = int(input("Enter the number of Periods invested:"))
+
 final_amount = interest(principal, rate, periods)
+
 print(f"The final value of the investment is {final_amount} centavos")
 
 -------
@@ -190,10 +203,15 @@ def body_mass_index(weight, height):
     return bmi
 
 weight = float(input("Enter Weight in pounds:"))
+
 feet = int(input("Enter Height in Feet component:"))
+
 inches = int(input("Enter Height in Inch component:"))
+
 height = [feet, inches]
+
 bmi = body_mass_index(weight, height)
+
 print(f"The BMI of the person is {bmi}")
 
 -------
