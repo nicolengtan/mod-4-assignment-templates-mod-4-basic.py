@@ -33,29 +33,9 @@ def savings(gross_pay, tax_rate, expenses):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-  
--------
+    return int(gross_pay - gross_pay*tax_rate) - expenses
 
-import math
-
-def savings(gross_pay, tax_rate, expenses):
-  if 0 <= tax_rate <= 1:
-    deduction = math.floor(gross_pay * tax_rate)
-    tax_paid = gross_pay - deduction
-    remaining_savings = tax_paid - expenses
-    return remaining_savings
-
-gross_pay = int(input("Enter employee's Gross Pay in centavos:"))
-
-tax_rate = float(input("Enter Tax Rate:"))
-
-expenses = int(input("Enter emoloyee's Expenses amount in centavos:"))
-
-savings_amount = savings(gross_pay, tax_rate, expenses)
-
-print(f"Remaining Savings: {savings_amount} centavos")
-
--------
+----------------------------------------------------------------------------
 
 def material_waste(total_material, material_units, num_jobs, job_consumption):
     '''Material Waste.
@@ -90,28 +70,9 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
+    return f"{total_material - num_jobs*job_consumption} {material_units}"
 
--------
-
-def material_waste(total_material, material_units, num_jobs, job_consumption):
-    total_consumption = num_jobs * job_consumption
-    material_wasted = total_material - total_consumption
-    result = f"{material_wasted} {material_units}"
-    return result
-
-total_material = int(input("Enter Total Material available:"))
-
-material_units = str(input("Enter Quantity Unit of the Material:"))
-
-num_jobs = int(input("Enter the Number of Jobs:"))
-
-job_consumption = int(input("Enter the Amount of Material Consumed per Job:"))
-
-waste_result = material_waste(total_material, material_units, num_jobs, job_consumption)
-
-print(f"Material wasted after {num_jobs} jobs: {waste_result}")
-
--------
+-------------------------------------------------------------------------------------------------
 
 def interest(principal, rate, periods):
     '''Interest.
@@ -141,24 +102,9 @@ def interest(principal, rate, periods):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
+    return principal + principal*(rate*periods)
 
--------
-
-def interest(principal, rate, periods):
-    final_value = int(principal * (1 + rate * periods))
-    return final_value
-
-principal = int(input("Enter Prinicipal Amount in centavos:"))
-
-rate = float(input("Enter the Interest Rate per period in decimals:"))
-
-periods = int(input("Enter the number of Periods invested:"))
-
-final_amount = interest(principal, rate, periods)
-
-print(f"The final value of the investment is {final_amount} centavos")
-
--------
+-------------------------------------------------------------------------------------------------
 
 def body_mass_index(weight, height):
     '''Body Mass Index.
@@ -190,28 +136,6 @@ def body_mass_index(weight, height):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
--------
-
-def body_mass_index(weight, height):
-    # 1 pound = 0.453592 kg
-    weight_kg = weight * 0.453592
-    # 1 foot = 12 inches; 1 inch = 0.0254 m
-    height = feet, inches
-    height_m = (feet * 12 + inches) * 0.0254
-    # bmi = weight / height
-    bmi = weight_kg / (height_m ** 2)
-    return bmi
-
-weight = float(input("Enter Weight in pounds:"))
-
-feet = int(input("Enter Height in Feet component:"))
-
-inches = int(input("Enter Height in Inch component:"))
-
-height = [feet, inches]
-
-bmi = body_mass_index(weight, height)
-
-print(f"The BMI of the person is {bmi}")
-
--------
+    kg = weight/2.2
+    m = (height[0]*12 + height[1])*0.0254
+    return kg/(m ** 2)
